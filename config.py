@@ -72,7 +72,7 @@ CONTRIBUTORS = """
 </tr>
 <tr>
     <td>Omdena Algeria Chapter</td>    
-    <td>Chapter Lead</td>    
+    <td>Kheira Lakhdari</td>    
 </tr>
 <tr>
     <td>Omdena Bhopal Chapter</td>    
