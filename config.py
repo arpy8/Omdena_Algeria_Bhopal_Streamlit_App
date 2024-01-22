@@ -1,24 +1,16 @@
-CSS = open("assets/misc/styles.css", 'r').read()
+CSS = open("assets/styles.css", 'r').read()
 
-IMG_BANNER = "assets/images/banner.png"
-IMG_BANNER2 = "assets/images/banner2.png"
-IMG_OMDENA = "assets/images/omdena-logo.png"
-IMG_LOGO = "assets/images/logo.png"
-IMG_ALGERIA = "assets/images/algeria.png"
-IMG_BHOPAL = "assets/images/bhopal.png"
-IMG_BACKGROUND = "assets/images/background.webp"
-
-ALGERIA_DATASET = "assets/datasets/algeria_dataset/GLDAS_GFS_population_Algeria_2015_2023_final.csv"
-BHOPAL_DATASET = "assets/datasets/bhopal_dataset/Bhopal_CompleteData_Final_Modified.csv"
+IMG_BANNER = "assets/banner.png"
+IMG_OMDENA = "assets/omdena-logo.png"
+IMG_LOGO = "assets/logo.png"
 
 SIDEBAR_TEXT_1 = """
-<center><h1>Omdena Algeria & Bhopal Chapter</h1></center>
+<center><h1>Omdena<br> Algeria & Bhopal<br>Chapter</h1></center>
 """
 SIDEBAR_TEXT_2 = """
 <hr>
 <h3 class='sidebar_h1'>Disclaimer</h3>
 <h5 class='sidebar_h1'>The predictions provided by this system are for informational purposes only.</h5>
-<hr>
 """
 
 
@@ -65,72 +57,12 @@ Refine the github repository of the project and prepare the final demo for prese
 """
 
 
-OVERVIEW_PHASE1 = """
-## Phase 1: Data Collection & Preprocessing
-[Dagshub Directory](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/data)
-
-The first phase is all about collecting data from different sources and merging them into a single dataset. The dataset is then preprocessed and cleaned to remove any missing values and outliers. The final dataset is then used for further analysis and model building.
-1. Raw Datasets: [Visit Link](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/data/raw)
-2. Preprocessed Datasets: [Visit Link](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/data/processed)
-
-##### 3. Final Datasets:
-"""
-
-OVERVIEW_PHASE2 = """
----
-## Phase 2: Exploratory Data Analysis (EDA)
-[Dagshub Directory](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks)
-
-EDA is involves delving into raw datasets with a curious mindset, employing statistical techniques and visualizations to unravel the underlying patterns, anomalies, and relationships within the data. It's a crucial preliminary step in the data analysis journey, aiming to extract meaningful insights, identify trends, and inform subsequent analytical decisions.
-All the jupyter notebooks created by our contributors for EDA can be found below:
-
-##### **A) Population**
-1. [EDA_Amir_FARES_Algiers borders and population.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Population/EDA_Amir_FARES_Algiers%20borders%20and%20population.ipynb), by **Amir Fares**
-2. [EDA_Bhopal_Population_Michelle_COYLE.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Population/EDA_Bhopal_Population_Michelle_COYLE.ipynb), by **Michelle Coyle**
-3. [Population_data_EDA_Meriem_.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Population/Population_data_EDA_Meriem_.ipynb), by Meriem Arab
-
-##### **B) Surface and Ground Water**
-1. [GFS_GLDAS_EDA_Weather_MihoRosenberg.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Surface%20&%20Groundwater/GFS_GLDAS_EDA_Weather_MihoRosenberg.ipynb), by **Miho Rosenberg**
-2. [EDA_Bhopal_Surface_Water_Michelle_COYLE.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Surface%20&%20Groundwater/EDA_Bhopal_Surface_Water_Michelle_COYLE.ipynb), by **Michelle Coyle**
-3. [EDA_GLDAS_Hariprasad_VL.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Surface%20&%20Groundwater/EDA_GLDAS_Hariprasad_VL.ipynb), by **Hariprasad VL**
-
-##### **C) Weather Parameters**
-1. [Bhopal_Rainfall_EDA_Hariprasad_VL.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Weather%20Parameters/Bhopal_Rainfall_EDA_Hariprasad_VL.ipynb), by **Hariprasad VL**
-2. [EDA_Bhopal_Weather_MihoRosenberg.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Weather%20Parameters/EDA_Bhopal_Weather_MihoRosenberg.ipynb), by **Miho Rosenberg**
-3. [EDA_Meriem_Arab.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Weather%20Parameters/EDA_Meriem_Arab.ipynb), by **Meriem Arab**
-4. [EDA_Weather_Algeria_Meriem.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Weather%20Parameters/EDA_Weather_Algeria_Meriem.ipynb), by **Meriem Arab**
-5. [EDA_weather_Emanuel_AFESSA.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Weather%20Parameters/EDA_weather_Emanuel_AFESSA.ipynb), by **Emanuel Afessa**
-"""
-
-OVERVIEW_PHASE3 = """
----
-## Phase 3: Preprocessing
-[Dagshub Directory](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task3_Preprocessing/notebooks)
-
-Data preprocessing involves cleaning and transforming the data to make it suitable for analysis. The goal of data preprocessing is to make the data accurate, consistent, and suitable for analysis. It helps to improve the quality and efficiency of the data mining process. Notebooks developed by our contributors are mentioned below: 
-
-1. [AlgeriaModifiedCalculations_AmirFARES.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task3_Preprocessing/notebooks/AlgeriaModifiedCalculations_AmirFARES.ipynb), by **Amir Fares**
-2. [Modified_preprocessing_Bhopal_Hariprasad.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task3_Preprocessing/notebooks/Modified_preprocessing_Bhopal_Hariprasad.ipynb), by **Hariprasad**
-3. [combine_bhopal_GLDAS_GFS_MihoRosenberg.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task3_Preprocessing/notebooks/combine_bhopal_GLDAS_GFS_MihoRosenberg.ipynb), by **Miho Rosenberg**
-4. [preprocessing_algeria_MihoRosenberg.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task3_Preprocessing/notebooks/preprocessing_algeria_MihoRosenberg.ipynb), by **Miho Rosenberg**
-5. [preprocessing_bhopal_MihoRosenberg.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task3_Preprocessing/notebooks/preprocessing_bhopal_MihoRosenberg.ipynb), by **Miho Rosenberg**
-"""
-
-OVERVIEW_PHASE4 = """
----
-## Phase 4: Model Development
-[Dagshub Directory](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task4_ModelDevelopment/notebooks)
-
-Model development is the most important part of the project. Model development is the iterative process of creating and refining mathematical or computational representations to understand or predict phenomena. The model is developed using the final preprocessed dataset from the previous phases.
-
-Collaborator Notebooks:
-
-1. [Algeria_Modeling_Amir_FARES.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task4_ModelDevelopment/notebooks/Algeria_Modeling_Amir_FARES.ipynb), by Amir Fares             
-2. [CNN-LSTM Model Abhinav Agrawal.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task4_ModelDevelopment/notebooks/CNN-LSTM%20Model%20Abhinav%20Agrawal.ipynb), by Abhinav Agrawal             
+ABOUT_US = """
+<h4 style="text-align: center; color:#FFF6F4 !important;">{More info about the problem statement}</h4><hr>
 """
 
 
-CONTRIBUTORS = """
+CONTRIBUTORS = """  
 <h1 style="text-align: center; color:#FFF6F4;">A heartfelt thankyou to all our contributors ❤️</h1><hr>
 <div style="text-align:center;">
 <table>
@@ -142,7 +74,7 @@ CONTRIBUTORS = """
     <td>Omdena Algeria Chapter</td>    
     <td>Kheira Lakhdari</td>    
 </tr>
-<tr>    
+<tr>
     <td>Omdena Bhopal Chapter</td>    
     <td>Chapter Lead</td>    
 </tr>
