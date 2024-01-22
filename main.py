@@ -1,11 +1,10 @@
 import base64
+import pandas as pd
 import streamlit as st
 
 from config import *
 from model import model_page 
-import pandas as pd
-import streamlit.components.v1 as components
-
+from streamlit_option_menu import option_menu
 
 def set_page_background(png_file):
     @st.cache_data()
@@ -71,6 +70,13 @@ def overview_page():
     
 
 def main():
+    
+    css_style = {
+        "icon": {"color": "white"},
+        "nav-link": {"--hover-color": "grey"},
+        "nav-link-selected": {"background-color": "#232fac"},   
+    }
+
     st.set_page_config(
         page_title=f"Omdena Algeria & Bhopal Chapter",
         page_icon="💦",
@@ -80,10 +86,17 @@ def main():
     set_page_background(IMG_BACKGROUND)
     st.markdown(f"<style>{CSS}</style>", unsafe_allow_html=True)
 
-    st.sidebar.image(IMG_BANNER2, width=280)
-    st.sidebar.write(SIDEBAR_TEXT_1, unsafe_allow_html=True)
-    selected_task = st.sidebar.selectbox("Please navigate through the different sections of our website from here", ["Home Page", "Project Overview", "Developed Model", "Contributors"], label_visibility="hidden")
-    st.sidebar.write(SIDEBAR_TEXT_2, unsafe_allow_html=True)
+    with st.sidebar:
+        st.image(IMG_BANNER2, width=280)
+        st.write(SIDEBAR_TEXT_1, unsafe_allow_html=True)
+        selected_task = option_menu(
+            menu_title=None,    
+            options=["Home Page", "Project Overview", "Developed Model", "Contributors"],
+            icons=["house", "info-circle", "gear", "people"],
+            styles=css_style
+        )
+        st.write(SIDEBAR_TEXT_2, unsafe_allow_html=True)
+    
     
     if selected_task == "Home Page":
         home_page()

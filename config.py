@@ -15,7 +15,6 @@ SIDEBAR_TEXT_1 = """
 <center><h1>Omdena Algeria & Bhopal Chapter</h1></center>
 """
 SIDEBAR_TEXT_2 = """
-<hr>
 <h3 class='sidebar_h1'>Disclaimer</h3>
 <h5 class='sidebar_h1'>The predictions provided by this system are for informational purposes only.</h5>
 <hr>
