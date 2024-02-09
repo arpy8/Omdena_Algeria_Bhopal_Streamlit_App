@@ -60,3 +60,4 @@ validators==0.22.0
 watchdog==4.0.0
 yarg==0.1.9
 zipp==3.17.0
+streamlit-option-menu==0.3.6
