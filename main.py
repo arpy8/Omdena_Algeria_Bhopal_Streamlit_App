@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st
 
 from config import *
-from model import model_page 
+from model import main as model_page 
 from streamlit_option_menu import option_menu
 
 def set_page_background(png_file):

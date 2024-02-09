@@ -1,4 +1,9 @@
-CSS = open("assets/misc/styles.css", 'r').read()
+CSS = open("assets/css/styles.css", 'r').read()
+CSS2 = {
+    "icon": {"color": "white"},
+    "nav-link": {"--hover-color": "grey"},
+    "nav-link-selected": {"background-color": "#232fac"},
+}
 
 IMG_BANNER = "assets/images/banner.png"
 IMG_BANNER2 = "assets/images/banner2.png"
@@ -8,8 +13,8 @@ IMG_ALGERIA = "assets/images/algeria.png"
 IMG_BHOPAL = "assets/images/bhopal.png"
 IMG_BACKGROUND = "assets/images/background.webp"
 
-ALGERIA_DATASET = "assets/datasets/algeria_dataset/GLDAS_GFS_population_Algeria_2015_2023_final.csv"
-BHOPAL_DATASET = "assets/datasets/bhopal_dataset/Bhopal_CompleteData_Final_Modified.csv"
+ALGERIA_DATASET = "assets/dataset/algeria/GLDAS_GFS_population_Algeria_2015_2023_final.csv"
+BHOPAL_DATASET = "assets/dataset/bhopal/Bhopal_CompleteData_Final_Modified.csv"
 
 SIDEBAR_TEXT_1 = """
 <center><h1>Omdena Algeria & Bhopal Chapter</h1></center>
@@ -181,3 +186,9 @@ CONTRIBUTORS = """
 </table>
 </div>
 """
+
+LAG_SIZE = 3
+TARGET = "daily_water_volume"
+ALGERIA_MODEL = r"assets\model\algeria_model.joblib"
+
+ALGERIA_AGG_DATASET = r"assets\dataset\algeria\algeria_month_agg.csv"
