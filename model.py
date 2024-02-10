@@ -54,13 +54,7 @@ def main():
     population_data.date = pd.to_datetime(population_data.date)
 
     model = load_model(selected)
-
-    mode = option_menu(
-        menu_title=None,
-        options=["Yearly", "Dated"],
-        styles=CSS2,
-        orientation="horizontal"
-    )
+    mode = st.selectbox('Select', ['Yearly', 'Dated'])
     
     if mode == "Dated":
 
