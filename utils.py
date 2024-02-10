@@ -24,7 +24,7 @@ class DateTimeFeatures(BaseEstimator, TransformerMixin):
         """
         if self.variables==None and not np.issubdtype(X.index.dtype, np.datetime64):
             raise TypeError("Index should have datetime type")
-        if self.variables!=None and not np.issubdtype(df[self.variables].dtype, np.datetime64):
+        if self.variables!=None and not np.issubdtype(X[self.variables].dtype, np.datetime64):
             raise TypeError("Column should have datetime type")
         return self
 

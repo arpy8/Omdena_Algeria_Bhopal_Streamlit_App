@@ -34,9 +34,14 @@ def plot_data(df, year, place):
 
 
 def main():
+    algeria_data = load_data(ALGERIA_AGG_DATASET)
+    bhopal_data = load_data(BHOPAL_AGG_DATASET)
+    
+    algeria_model = joblib.load(ALGERIA_MODEL)
+    bhopal_model = joblib.load(BHOPAL_MODEL)
     try:
         st.write('<center><h1>Forecast Water Availability</h1></center><br>', unsafe_allow_html=True)
-
+        
         selected = option_menu(
             menu_title=None,
             options=["Algeria", "Bhopal"],
@@ -46,9 +51,6 @@ def main():
         )
 
         if selected=="Algeria":
-            data = load_data(ALGERIA_AGG_DATASET)
-            model = joblib.load(ALGERIA_MODEL)
-            
             mode = option_menu(
                 menu_title="Select Prediction Type",
                 options=["Yearly", "Dated"],
@@ -79,8 +81,8 @@ def main():
             forecast_button = st.button("Forecast")
 
             if forecast_button:
-                df_forecast = recursive_multi_step_forecasting_monthly(data, TARGET, model, 365*int(number_input))
-                df_and_forecast = pd.concat([data, df_forecast], axis=0)
+                df_forecast = recursive_multi_step_forecasting_monthly(algeria_data, TARGET, algeria_model, 365*int(number_input))
+                df_and_forecast = pd.concat([algeria_data, df_forecast], axis=0)
                 daily_water_demand_mld_algiers = DAILY_WATER_DEMAND_LCD * df_and_forecast[df_and_forecast.columns[0]]*10**(-6)
                 df_and_forecast['water_availability'] = df_and_forecast.daily_water_volume - daily_water_demand_mld_algiers
 
@@ -90,8 +92,6 @@ def main():
                 forecast_button.empty()
 
         if selected=="Bhopal":
-            data = load_data(BHOPAL_AGG_DATASET)
-            model = joblib.load(BHOPAL_MODEL)
             
             mode = option_menu(
                 menu_title="Select Prediction Type",
@@ -122,8 +122,8 @@ def main():
             forecast_button = st.button("Forecast")
 
             if forecast_button:
-                df_forecast = recursive_multi_step_forecasting_monthly(data, TARGET, model, 365*int(number_input))
-                df_bhopal_and_forecast = pd.concat([data, df_forecast], axis=0)
+                df_forecast = recursive_multi_step_forecasting_monthly(bhopal_data, TARGET, bhopal_model, 365*int(number_input))
+                df_bhopal_and_forecast = pd.concat([bhopal_data, df_forecast], axis=0)
                 daily_water_demand_mld_bhopal = DAILY_WATER_DEMAND_LCD * df_bhopal_and_forecast['population'] * 10**(-6)
                 df_bhopal_and_forecast['water_availability'] = df_bhopal_and_forecast.daily_water_volume - daily_water_demand_mld_bhopal
 
