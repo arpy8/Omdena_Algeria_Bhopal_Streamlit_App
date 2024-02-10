@@ -29,6 +29,12 @@ def plot_data(df, year, place):
     st.plotly_chart(fig)
     return df
    
+def load_model(selected):
+    model_path = ALGERIA_MODEL if selected == "Algeria" else BHOPAL_MODEL
+    model = joblib.load(model_path)
+    return model
+
+
 def main():
     # try:
         st.write('<center><h1>Forecast Water Availability</h1></center><br>', unsafe_allow_html=True)
@@ -40,19 +46,14 @@ def main():
             styles=CSS2,
             orientation="horizontal"
         )
-        st.success("Done Selected")
         
         data = load_data(ALGERIA_AGG_DATASET if selected=="Algeria" else BHOPAL_AGG_DATASET)
-        st.success("Done Data")
-        
         population_data = load_data(ALGERIA_POPULATION if selected=="Algeria" else BHOPAL_POPULATION)
         population_data.date = pd.to_datetime(population_data.date)
-        st.success("Done Population Data")
-        
-        model = joblib.load(ALGERIA_MODEL if selected=="Algeria" else BHOPAL_MODEL)
-        st.success("Done Model")
-        
+
+        model = load_model(selected)
         number_input = st.slider("Number of years to forecast", 1, 10, 1)
+
         forecast_button = st.empty()
         
         if forecast_button.button("Forecast"):
