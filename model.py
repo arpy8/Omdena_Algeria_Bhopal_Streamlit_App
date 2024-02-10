@@ -54,8 +54,9 @@ def main():
     population_data.date = pd.to_datetime(population_data.date)
 
     model = load_model(selected)
-    mode = st.selectbox('Select', ['Yearly', 'Dated'])
-    
+
+    mode = st.selectbox('Prediction Mode', ['Yearly', 'Dated'], index=1, placeholder  = 'Select Option', label_visibility= 'visible')
+
     if mode == "Dated":
 
         col1, col2, col3 = st.columns(3)
