@@ -40,17 +40,17 @@ def main():
             styles=CSS2,
             orientation="horizontal"
         )
-        st.info("Selected: ", selected)
+        st.success("Done Selected")
         
         data = load_data(ALGERIA_AGG_DATASET if selected=="Algeria" else BHOPAL_AGG_DATASET)
-        st.info("Data")
+        st.success("Done Data")
         
         population_data = load_data(ALGERIA_POPULATION if selected=="Algeria" else BHOPAL_POPULATION)
         population_data.date = pd.to_datetime(population_data.date)
-        st.info("Population Data")
+        st.success("Done Population Data")
         
         model = joblib.load(ALGERIA_MODEL if selected=="Algeria" else BHOPAL_MODEL)
-        st.info("Model")
+        st.success("Done Model")
         
         number_input = st.slider("Number of years to forecast", 1, 10, 1)
         forecast_button = st.empty()
@@ -58,22 +58,22 @@ def main():
         if forecast_button.button("Forecast"):
             df_forecast = recursive_multi_step_forecasting_monthly(data, TARGET, model, 365*int(number_input))
             df_and_forecast = pd.concat([data, df_forecast], axis=0)
-            st.info("Forecasted Data")
+            st.success("Done Forecasted Data")
             
             df_and_forecast['population'] = [population_data[population_data.date.dt.year == y][' Population'].values[0] for y in df_and_forecast.index.year]
             daily_water_demand_lcd = 200
             daily_water_demand_mld = daily_water_demand_lcd * df_and_forecast['population']*10**(-6)
             df_and_forecast['water_availability'] = df_and_forecast.daily_water_volume - daily_water_demand_mld
-            st.info("Water Availability")
+            st.success("Done Water Availability")
 
             plot_data(df_and_forecast, place=selected ,year=number_input)
-            st.info("Water Availability")
+            st.success("Done Water Availability")
             st.balloons()
                 
             forecast_button.empty()
         
     except Exception as e:
-        st.info(e)
+        st.success(eDone )
 
 if __name__=="__main__":
     main()
