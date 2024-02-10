@@ -1,8 +1,8 @@
 CSS = open("assets/css/styles.css", 'r').read()
 CSS2 = {
-    "icon": {"color": "white"},
-    "nav-link": {"--hover-color": "grey"},
-    "nav-link-selected": {"background-color": "#232fac"},
+    "icon": {"colo": "white"},
+    "nav-link": {"--hover-colo": "grey"},
+    "nav-link-selected": {"background-colo": "#232fac"},
 }
 
 IMG_BANNER = "assets/images/banner.png"
@@ -137,13 +137,13 @@ Collaborator Notebooks:
 LAG_SIZE = 3
 TARGET = "daily_water_volume"
 
-ALGERIA_AGG_DATASET = r"assets\dataset\algeria\algeria_month_agg.csv"
-ALGERIA_POPULATION = r"assets\dataset\algeria\Algiers-population-2023-11-22.csv"
-ALGERIA_MODEL = r"assets\model\algeria_model.joblib"
+ALGERIA_AGG_DATASET = "assets/dataset/algeria/algeria_month_agg.csv"
+ALGERIA_POPULATION = "assets/dataset/algeria/Algiers-population-2023-11-22.csv"
+ALGERIA_MODEL = "assets/model/algeria_model.joblib"
 
-BHOPAL_AGG_DATASET = r"assets\dataset\bhopal\bhopal_month_agg.csv"
-BHOPAL_POPULATION = r"assets\dataset\bhopal\Bhopal-population-2023-11-22.csv"
-BHOPAL_MODEL = r"assets\model\bhopal_model.joblib"
+BHOPAL_AGG_DATASET = "assets/dataset/bhopal/bhopal_month_agg.csv"
+BHOPAL_POPULATION = "assets/dataset/bhopal/Bhopal-population-2023-11-22.csv"
+BHOPAL_MODEL = "assets/model/bhopal_model.joblib"
 
 
 CONTRIBUTORS = """
