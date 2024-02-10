@@ -134,6 +134,18 @@ Collaborator Notebooks:
 """
 
 
+LAG_SIZE = 3
+TARGET = "daily_water_volume"
+
+ALGERIA_AGG_DATASET = r"assets\dataset\algeria\algeria_month_agg.csv"
+ALGERIA_POPULATION = r"assets\dataset\algeria\Algiers-population-2023-11-22.csv"
+ALGERIA_MODEL = r"assets\model\algeria_model.joblib"
+
+BHOPAL_AGG_DATASET = r"assets\dataset\bhopal\bhopal_month_agg.csv"
+BHOPAL_POPULATION = r"assets\dataset\bhopal\Bhopal-population-2023-11-22.csv"
+BHOPAL_MODEL = r"assets\model\bhopal_model.joblib"
+
+
 CONTRIBUTORS = """
 <h1 style="text-align: center; color:#FFF6F4;">A heartfelt thankyou to all our contributors ❤️</h1><hr>
 <div style="text-align:center;">
@@ -186,9 +198,3 @@ CONTRIBUTORS = """
 </table>
 </div>
 """
-
-LAG_SIZE = 3
-TARGET = "daily_water_volume"
-ALGERIA_MODEL = r"assets\model\algeria_model.joblib"
-
-ALGERIA_AGG_DATASET = r"assets\dataset\algeria\algeria_month_agg.csv"
