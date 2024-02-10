@@ -30,7 +30,7 @@ def plot_data(df, year, place):
     return df
    
 def main():
-    try:
+    # try:
         st.write('<center><h1>Forecast Water Availability</h1></center><br>', unsafe_allow_html=True)
         
         selected = option_menu(
@@ -72,8 +72,8 @@ def main():
                 
             forecast_button.empty()
         
-    except Exception as e:
-        st.error(f"{e}")
+    # except Exception as e:
+    #     st.error(f"{e}")
 
 if __name__=="__main__":
     main()
