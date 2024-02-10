@@ -3,18 +3,23 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 from streamlit_option_menu import option_menu
+from datetime import datetime
 
 from config import *
 from utils import *
 
+CUR_DATE = datetime.now()
 
 def load_data(file_path):
-    ds_name = file_path
-    df = pd.read_csv(ds_name)
-    df.index = pd.to_datetime(df.index)
+    try:
+        ds_name = file_path
+        df = pd.read_csv(ds_name)
+        df.index = pd.to_datetime(df.index)
 
-    return df
-
+        return df
+    except Exception as e:
+        print(e)
+        return "error - load_data"
 
 def plot_data(df, year, place):
     fig = px.line(df, x=df.index, y=df.columns[-1])
@@ -43,11 +48,37 @@ def main():
         if selected=="Algeria":
             data = load_data(ALGERIA_AGG_DATASET)
             model = joblib.load(ALGERIA_MODEL)
-            number_input = st.slider("Number of years to forecast", 1, 50, 1)
             
-            forecast_button = st.empty()
-            
-            if forecast_button.button("Forecast"):
+            mode = option_menu(
+                menu_title="Select Prediction Type",
+                options=["Yearly", "Dated"],
+                styles=CSS2,
+                orientation="horizontal"
+            )
+
+            if mode == "Yearly":
+                number_input = st.slider("Number of years to forecast", 1, 50, 1)
+
+            if mode == "Dated":
+                col1, col2, col3 = st.columns(3)
+
+                with col1:
+                    day = st.number_input('Day', min_value=1, max_value=31, value=datetime.now().day)
+                with col2:
+                    month = st.number_input('Month', min_value=1, max_value=12, value=datetime.now().month)
+                with col3:
+                    year = st.number_input('Year', min_value=1900, max_value=3000, value=datetime.now().year)
+                try:
+                    date = datetime(year, month, day)
+                    delta = date - CUR_DATE
+                    number_input = delta.days
+                except ValueError as e:
+                    st.error(f"Invalid date: {e}")
+
+
+            forecast_button = st.button("Forecast")
+
+            if forecast_button:
                 df_forecast = recursive_multi_step_forecasting_monthly(data, TARGET, model, 365*int(number_input))
                 df_and_forecast = pd.concat([data, df_forecast], axis=0)
                 daily_water_demand_mld_algiers = DAILY_WATER_DEMAND_LCD * df_and_forecast[df_and_forecast.columns[0]]*10**(-6)
@@ -61,7 +92,32 @@ def main():
         if selected=="Bhopal":
             data = load_data(BHOPAL_AGG_DATASET)
             model = joblib.load(BHOPAL_MODEL)
-            number_input = st.slider("Number of years to forecast", 1, 50, 1)
+            
+            mode = option_menu(
+                menu_title="Select Prediction Type",
+                options=["Yearly", "Dated"],
+                styles=CSS2,
+                orientation="horizontal"
+            )
+
+            if mode == "Yearly":
+                number_input = st.slider("Number of years to forecast", 1, 50, 1)
+
+            if mode == "Dated":
+                col1, col2, col3 = st.columns(3)
+
+                with col1:
+                    day = st.number_input('Day', min_value=1, max_value=31, value=datetime.now().day)
+                with col2:
+                    month = st.number_input('Month', min_value=1, max_value=12, value=datetime.now().month)
+                with col3:
+                    year = st.number_input('Year', min_value=1900, max_value=3000, value=datetime.now().year)
+                try:
+                    date = datetime(year, month, day)
+                    delta = date - CUR_DATE
+                    number_input = delta.days
+                except ValueError as e:
+                    st.error(f"Invalid date: {e}")
 
             forecast_button = st.button("Forecast")
 
