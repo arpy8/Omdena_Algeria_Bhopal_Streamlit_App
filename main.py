@@ -4,6 +4,8 @@ import streamlit as st
 
 from config import *
 from model import main as model_page 
+from contributors import contributors_page 
+
 from streamlit_option_menu import option_menu
 
 def set_page_background(png_file):
@@ -71,7 +73,6 @@ def overview_page():
     
 
 def main():
-    
     css_style = {
         "icon": {"color": "white"},
         "nav-link": {"--hover-color": "grey"},
@@ -98,7 +99,6 @@ def main():
         )
         st.write(SIDEBAR_TEXT_2, unsafe_allow_html=True)
     
-    
     if selected_task == "Home Page":
         home_page()
     elif selected_task == "Project Overview":
@@ -106,8 +106,7 @@ def main():
     elif selected_task == "Developed Model":
         model_page()
     elif selected_task == "Contributors":
-        st.balloons()
-        st.write(CONTRIBUTORS, unsafe_allow_html=True)
-    
+        contributors_page()
+        
 if __name__ == "__main__":
     main()

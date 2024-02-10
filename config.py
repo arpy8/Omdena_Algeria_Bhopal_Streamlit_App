@@ -173,7 +173,7 @@ CONTRIBUTORS = """
 </tr>
 <tr>    
     <td>Omdena Bhopal Chapter</td>    
-    <td>Chapter Lead</td>    
+    <td>Eeman Majumder, Vaasu Bisht</td>
 </tr>
 </table>
 <br>
@@ -181,33 +181,7 @@ CONTRIBUTORS = """
     <tbody>
         <tr>
             <th width="20%" style="font-size: 140%;" colspan="3">Contributors</th>
-        </tr>
-        <tr>
-            <td>John Doe</td>
-            <td>John Doe</td>
-            <td>John Doe</td>
-        </tr>
-        <tr>
-            <td>John Doe</td>
-            <td>John Doe</td>
-            <td>John Doe</td>
-        </tr>
-        <tr>
-            <td>John Doe</td>
-            <td>John Doe</td>
-            <td>John Doe</td>
-        </tr>
-        <tr>
-            <td>John Doe</td>
-            <td>John Doe</td>
-            <td>John Doe</td>
-        </tr>
-        <tr>
-            <td>John Doe</td>
-            <td>John Doe</td>
-            <td>John Doe</td>
-        </tr>
-    </tbody>
+        </tr>{}</tbody>
 </table>
 </div>
 """
