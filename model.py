@@ -59,16 +59,13 @@ def main():
         if forecast_button.button("Forecast"):
             df_forecast = recursive_multi_step_forecasting_monthly(data, TARGET, model, 365*int(number_input))
             df_and_forecast = pd.concat([data, df_forecast], axis=0)
-            st.success("Done Forecasted Data")
             
             df_and_forecast['population'] = [population_data[population_data.date.dt.year == y][' Population'].values[0] for y in df_and_forecast.index.year]
             daily_water_demand_lcd = 200
             daily_water_demand_mld = daily_water_demand_lcd * df_and_forecast['population']*10**(-6)
             df_and_forecast['water_availability'] = df_and_forecast.daily_water_volume - daily_water_demand_mld
-            st.success("Done Water Availability")
 
             plot_data(df_and_forecast, place=selected ,year=number_input)
-            st.success("Done Water Availability")
             st.balloons()
                 
             forecast_button.empty()
