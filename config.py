@@ -133,6 +133,19 @@ Collaborator Notebooks:
 2. [CNN-LSTM Model Abhinav Agrawal.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task4_ModelDevelopment/notebooks/CNN-LSTM%20Model%20Abhinav%20Agrawal.ipynb), by Abhinav Agrawal             
 """
 
+OVERVIEW_PHASE5 = """
+---
+## Phase 5: Model Deployment
+[Github Directory](https://github.com/arpy8/Omdena_Algeria_Bhopal_Streamlit_App)
+
+Model development is the iterative process of creating and refining mathematical or computational representations to understand or predict phenomena. The model is developed using the final preprocessed dataset from the previous phases. 
+
+Collaborators who contributed to this phase are mentioned below:
+1. [Anastasiia Marchenko](https://www.linkedin.com/in/anastasia-marchenko/)             
+2. [Argish Abhangi](https://www.linkedin.com/in/argish/)             
+2. [Arpit Sengar](https://www.linkedin.com/in/arpitsengar/)             
+"""
+
 
 LAG_SIZE = 3
 TARGET = "daily_water_volume"
