@@ -2,7 +2,7 @@ CSS = open("assets/css/styles.css", 'r').read()
 CSS2 = {
     "icon": {"colo": "white"},
     "nav-link": {"--hover-colo": "grey"},
-    "nav-link-selected": {"background-colo": "#232fac"},
+    "nav-link-selected": {"background-color": "#232FAC"},
 }
 
 IMG_BANNER = "assets/images/banner.png"
@@ -139,11 +139,11 @@ TARGET = "daily_water_volume"
 
 ALGERIA_AGG_DATASET = "assets/dataset/algeria/algeria_month_agg.csv"
 ALGERIA_POPULATION = "assets/dataset/algeria/Algiers-population-2023-11-22.csv"
-ALGERIA_MODEL = "assets/model/algeria_model.joblib"
+ALGERIA_MODEL = "assets/model/RandomForestRegressorAlgeria.joblib"
 
 BHOPAL_AGG_DATASET = "assets/dataset/bhopal/bhopal_month_agg.csv"
 BHOPAL_POPULATION = "assets/dataset/bhopal/Bhopal-population-2023-11-22.csv"
-BHOPAL_MODEL = "assets/model/bhopal_model.joblib"
+BHOPAL_MODEL = "assets/model/RandomForestRegressorBhopal.joblib"
 
 
 CONTRIBUTORS = """
