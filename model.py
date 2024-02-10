@@ -73,7 +73,7 @@ def main():
             forecast_button.empty()
         
     except Exception as e:
-        st.success(eDone )
+        st.success(f"{e}")
 
 if __name__=="__main__":
     main()
