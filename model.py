@@ -1,8 +1,8 @@
 import joblib
 import pandas as pd
 import streamlit as st
-import plotly.express as px
 from streamlit_option_menu import option_menu
+from plotly import graph_objects as go
 
 from utils import *
 from config import *
@@ -15,14 +15,18 @@ def load_data(file_path):
     return df
     
 def plot_data(df, year, place):
-    fig = px.line(df, x=df.index, y=df.columns[-1])
+    df_before = df[df.index <= '2023-07-01']
+    df_after = df[df.index >= '2023-07-01']
+    fig = go.Figure([go.Scatter(x=df_before.index, y=df_before.water_availability, name='collected'),
+                 go.Scatter(x=df_after.index, y=df_after.water_availability, name='forecasted')
+                ])
     fig.update_layout(
         xaxis_title='Year',
         yaxis_title='Value',
         title=f'Final Forecasting of Water Availability in {place} for the next {year} {"years" if year > 1 else "year"}'
     )
+    
     st.plotly_chart(fig)
-
     return df
    
 def main():
@@ -37,24 +41,27 @@ def main():
             orientation="horizontal"
         )
         
-        if selected=="Algeria":
-            data = load_data(ALGERIA_AGG_DATASET)
-            model = joblib.load(ALGERIA_MODEL)
-            number_input = st.slider("Number of years to forecast", 1, 50, 1)
+        data = load_data(ALGERIA_AGG_DATASET if selected=="Algeria" else BHOPAL_AGG_DATASET)
+        population_data = load_data(ALGERIA_POPULATION if selected=="Algeria" else BHOPAL_POPULATION)
+        population_data.date = pd.to_datetime(population_data.date)
+        model = joblib.load(ALGERIA_MODEL if selected=="Algeria" else BHOPAL_MODEL)
+        
+        number_input = st.slider("Number of years to forecast", 1, 10, 1)
+        forecast_button = st.empty()
+        
+        if forecast_button.button("Forecast"):
+            df_forecast = recursive_multi_step_forecasting_monthly(data, TARGET, model, 365*int(number_input))
+            df_and_forecast = pd.concat([data, df_forecast], axis=0)
             
-            forecast_button = st.empty()
-            
-            if forecast_button.button("Forecast"):
-                df_forecast = recursive_multi_step_forecasting_monthly(data, TARGET, model, 365*int(number_input))
-                df_and_forecast = pd.concat([data, df_forecast], axis=0)
-                daily_water_demand_lcd = 200
-                daily_water_demand_mld_algiers = daily_water_demand_lcd * df_and_forecast[df_and_forecast.columns[0]]*10**(-6)
-                df_and_forecast['water_availability'] = df_and_forecast.daily_water_volume - daily_water_demand_mld_algiers
+            df_and_forecast['population'] = [population_data[population_data.date.dt.year == y][' Population'].values[0] for y in df_and_forecast.index.year]
+            daily_water_demand_lcd = 200
+            daily_water_demand_mld = daily_water_demand_lcd * df_and_forecast['population']*10**(-6)
+            df_and_forecast['water_availability'] = df_and_forecast.daily_water_volume - daily_water_demand_mld
 
-                plot_data(df_and_forecast, place="Algeria" ,year=number_input)
-                st.balloons()
+            plot_data(df_and_forecast, place=selected ,year=number_input)
+            st.balloons()
                 
-                forecast_button.empty()
+            forecast_button.empty()
         
     except Exception as e:
         print(e)
