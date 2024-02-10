@@ -187,8 +187,12 @@ CONTRIBUTORS = """
 </div>
 """
 
+DAILY_WATER_DEMAND_LCD = 200
 LAG_SIZE = 3
 TARGET = "daily_water_volume"
-ALGERIA_MODEL = r"assets\model\algeria_model.joblib"
 
-ALGERIA_AGG_DATASET = r"assets\dataset\algeria\algeria_month_agg.csv"
+ALGERIA_MODEL = r"assets/model/algeria_model.joblib"
+ALGERIA_AGG_DATASET = r"assets/dataset/algeria/algeria_month_agg.csv"
+
+BHOPAL_MODEL = r"assets/model/bhopal_model.joblib"
+BHOPAL_AGG_DATASET = r"assets/dataset/bhopal/bhopal_month_agg.csv"
