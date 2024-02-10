@@ -91,7 +91,7 @@ All the jupyter notebooks created by our contributors for EDA can be found below
 ##### **A) Population**
 1. [EDA_Amir_FARES_Algiers borders and population.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Population/EDA_Amir_FARES_Algiers%20borders%20and%20population.ipynb), by **Amir Fares**
 2. [EDA_Bhopal_Population_Michelle_COYLE.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Population/EDA_Bhopal_Population_Michelle_COYLE.ipynb), by **Michelle Coyle**
-3. [Population_data_EDA_Meriem_.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Population/Population_data_EDA_Meriem_.ipynb), by Meriem Arab
+3. [Population_data_EDA_Meriem_.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Population/Population_data_EDA_Meriem_.ipynb), by **Meriem Baziz**
 
 ##### **B) Surface and Ground Water**
 1. [GFS_GLDAS_EDA_Weather_MihoRosenberg.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Surface%20&%20Groundwater/GFS_GLDAS_EDA_Weather_MihoRosenberg.ipynb), by **Miho Rosenberg**
@@ -102,7 +102,7 @@ All the jupyter notebooks created by our contributors for EDA can be found below
 1. [Bhopal_Rainfall_EDA_Hariprasad_VL.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Weather%20Parameters/Bhopal_Rainfall_EDA_Hariprasad_VL.ipynb), by **Hariprasad VL**
 2. [EDA_Bhopal_Weather_MihoRosenberg.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Weather%20Parameters/EDA_Bhopal_Weather_MihoRosenberg.ipynb), by **Miho Rosenberg**
 3. [EDA_Meriem_Arab.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Weather%20Parameters/EDA_Meriem_Arab.ipynb), by **Meriem Arab**
-4. [EDA_Weather_Algeria_Meriem.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Weather%20Parameters/EDA_Weather_Algeria_Meriem.ipynb), by **Meriem Arab**
+4. [EDA_Weather_Algeria_Meriem.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Weather%20Parameters/EDA_Weather_Algeria_Meriem.ipynb), by **Meriem Baziz**
 5. [EDA_weather_Emanuel_AFESSA.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task2_EDA/notebooks/Weather%20Parameters/EDA_weather_Emanuel_AFESSA.ipynb), by **Emanuel Afessa**
 """
 
