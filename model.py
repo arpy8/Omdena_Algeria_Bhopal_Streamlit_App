@@ -17,17 +17,25 @@ def load_data(file_path):
 
     return df
     
-def plot_data(df, year, place):
+def plot_data(df, year, place, mode):
     df_before = df[df.index <= '2023-07-01']
     df_after = df[df.index >= '2023-07-01']
     fig = go.Figure([go.Scatter(x=df_before.index, y=df_before.water_availability, name='collected'),
                  go.Scatter(x=df_after.index, y=df_after.water_availability, name='forecasted')
                 ])
-    fig.update_layout(
-        xaxis_title='Year',
-        yaxis_title='Value',
-        title=f'Final Forecasting of Water Availability in {place} for the next {year} {"years" if year > 1 else "year"}'
-    )
+    if mode == "Yearly":
+        fig.update_layout(
+            xaxis_title='Year',
+            yaxis_title='Value',
+            title=f'Final Forecasting of Water Availability in {place} for the next {year} {"year" if year == 1 else "years"}'
+        )
+
+    elif mode == "Dated":
+        fig.update_layout(
+            xaxis_title='Year',
+            yaxis_title='Value',
+            title=f'Final Forecasting of Water Availability in {place} for the next {year} {"day" if year == 1 else "days"}'
+        )
     
     st.plotly_chart(fig)
     return df
@@ -89,7 +97,7 @@ def main():
         daily_water_demand_mld = daily_water_demand_lcd * df_and_forecast['population']*10**(-6)
         df_and_forecast['water_availability'] = df_and_forecast.daily_water_volume - daily_water_demand_mld
 
-        plot_data(df_and_forecast, place=selected ,year=number_input)
+        plot_data(df_and_forecast, place=selected ,year=number_input, mode=mode)
         st.balloons()
             
         forecast_button.empty()
