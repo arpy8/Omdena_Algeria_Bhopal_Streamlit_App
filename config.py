@@ -130,7 +130,10 @@ Model development is the most important part of the project. Model development i
 Collaborator Notebooks:
 
 1. [Algeria_Modeling_Amir_FARES.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task4_ModelDevelopment/notebooks/Algeria_Modeling_Amir_FARES.ipynb), by Amir Fares             
-2. [CNN-LSTM Model Abhinav Agrawal.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task4_ModelDevelopment/notebooks/CNN-LSTM%20Model%20Abhinav%20Agrawal.ipynb), by Abhinav Agrawal             
+2. [CNN-LSTM Model Abhinav Agrawal.ipynb](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task4_ModelDevelopment/notebooks/CNN-LSTM%20Model%20Abhinav%20Agrawal.ipynb), by Abhinav Agrawal        
+3. [LSTM Models_Algeris](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task4_ModelDevelopment/notebooks/LSTM%20Models_algeris), by Argish Abhangi
+4. [LSTM Models_Bhopal](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task4_ModelDevelopment/notebooks/LSTM%20Models_bhopal), by Argish Abhangi
+5. [Anastasiia_RF_Models](https://dagshub.com/Omdena/AlgeriaBhopal_WaterManagementandForecasting/src/main/src/Task4_ModelDevelopment/notebooks/Anastasiia), by Anastasiia Marchenko
 """
 
 OVERVIEW_PHASE5 = """
